@@ -1,7 +1,5 @@
 import random
 
-# Hello World
-
 def choose_word():
     words = ["python", "javascript", "ruby", "java", "swift", "php", "html", "css", "csharp", "go"]
     return random.choice(words)
@@ -20,7 +18,7 @@ def play_game():
         word_list = [letter if letter in used_letters else '_' for letter in word]
         print("Current word: ", ' '.join(word_list))
 
-        user_letter = input("Guess a letter: ").lower()
+        user_letter = input("Guess a letter: ").lower()[0]
         if user_letter in alphabet - used_letters:
             used_letters.add(user_letter)
             if user_letter in word_letters:
