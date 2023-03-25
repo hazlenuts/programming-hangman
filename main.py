@@ -9,14 +9,14 @@ def play_game():
     word_letters = set(word)
     alphabet = set('abcdefghijklmnopqrstuvwxyz')
     used_letters = set()
-
+  
     lives = 6
 
     while len(word_letters) > 0 and lives > 0:
-        print("You have", lives, "lives left and you have used these letters: ", ' '.join(used_letters))
+        print(f"You have {lives}, lives left and you have used these letters: {' '.join(used_letters)}")
 
         word_list = [letter if letter in used_letters else '_' for letter in word]
-        print("Current word: ", ' '.join(word_list))
+        print(f"Current word: {' '.join(word_list)}")
 
         user_letter = input("Guess a letter: ").lower()[0]
         if user_letter in alphabet - used_letters:
@@ -34,8 +34,8 @@ def play_game():
             print("Invalid character. Please try again.")
     
     if lives == 0:
-        print("Sorry, you died. The word was", word)
+        print(f"Sorry, you died. The word was {word}")
     else:
-        print("You guessed the word", word, "!!")
+        print(f"You guessed the word {word}!")
 
 play_game()
